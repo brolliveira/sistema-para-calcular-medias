@@ -17,27 +17,32 @@ function validaNota(nota) {
     }
 }
 rl.question("qual foi a sua primeira nota?", function (nota1) {
-    const nota1Numero = +nota1;
-    validaNota(nota1Numero);
+    const notaNumero1 = +nota1;
+    validaNota(notaNumero1);
     //console.log("a sua ultima nota é " + nota1Numero);
 
     rl.question("qual foi a sua segunda nota?", function (nota2) {
-        const nota2Numero = +nota2
-        validaNota(nota2Numero)
+        const notaNumero2 = +nota2
+        validaNota(notaNumero2)
         //console.log("a sua penultima nota é " + nota2Numero);
 
         rl.question("qual foi a sua terceira nota ?", function (nota3){
             const notaNumero3 = +nota3
             validaNota(notaNumero3)
+
+            rl.question("qual foi a sua quarta nota ?", function (nota4){
+                const notaNumero4 = +nota3
+                validaNota(notaNumero4)
             
-            const soma = nota1Numero + nota2Numero + notaNumero3;
+            const soma = notaNumero1 + notaNumero2 + notaNumero3 + notaNumero4;
             console.log("A soma das suas notas é: " + soma);
             //console.log("type: " + typeof soma);
-            const media = (soma) / 3;
+            const media = (soma) / 4;
             console.log(`A média das suas notas é: ${media}`);
             
             rl.close();
         }) 
+    })
 
     })
 })
